@@ -16,12 +16,12 @@ hash 的set命令是 HSET key field value 他这里有一个 field字段。
 	如果在key已经在reids中存在的情况下
 想要在redisson中使用
 
-`RLock lock = redisClientService.getRLock(key);
-boolean res = lock.tryLock(3, 30, TimeUnit.SECONDS);` 
-
+`RLock lock = redisClientService.getRLock(key);`
+`boolean res = lock.tryLock(3, 30, TimeUnit.SECONDS); 
+`
 不报错的话，可以这样操作。
 
-`String hset_key = "hset_key";
-redisClientService.hset(hset_key,"field1","value");
-RLock lock = redisClientService.getRLock(hset_key);
-boolean res = lock.tryLock(3, 30, TimeUnit.SECONDS)`; 
+`String hset_key = "hset_key";`
+`redisClientService.hset(hset_key,"field1","value");`
+`RLock lock = redisClientService.getRLock(hset_key);`
+`boolean res = lock.tryLock(3, 30, TimeUnit.SECONDS);`
