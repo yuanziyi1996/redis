@@ -2,6 +2,7 @@ package com.yzy.redis;
 
 import com.yzy.redis.redis.redisClient.RedisClientService;
 import io.lettuce.core.ScriptOutputType;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.redisson.api.RLock;
@@ -17,6 +18,7 @@ import java.util.concurrent.TimeUnit;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Slf4j
 public class RedisApplicationTests {
 
   @Test
@@ -174,7 +176,7 @@ public class RedisApplicationTests {
     } finally {
       lock.unlock();
     }
-
-
   }
+
+
 }
